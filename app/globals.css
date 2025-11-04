@@ -1,0 +1,45 @@
+:root { color-scheme: dark; }
+html, body { margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: radial-gradient(1200px 800px at 20% -10%, #11161c 0%, #0b0e11 60%); color: #e0e6ed; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.title { margin: 0 0 16px; font-size: 22px; font-weight: 700; letter-spacing: 0.2px; }
+.grid { display: grid; grid-template-columns: 1fr 380px; gap: 20px; align-items: start; }
+
+.card { background: #11161d; border: 1px solid #1e242c; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.02); }
+.cardHeader { padding: 14px 16px; border-bottom: 1px solid #1e242c; font-weight: 600; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); letter-spacing: 0.3px; }
+.cardBody { height: 620px; overflow: auto; }
+.row { display: grid; grid-template-columns: 1fr 1fr 1fr; font-variant-numeric: tabular-nums; padding: 4px 10px; position: relative; }
+.row:hover { background: rgba(255,255,255,0.035); }
+.rowLabel { opacity: 0.7; font-size: 12px; padding: 6px 8px; }
+.headerRow { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 8px 12px; font-size: 12px; opacity: 0.7; border-bottom: 1px solid #1e242c; backdrop-filter: saturate(1.2); }
+.spread { text-align: center; padding: 10px 12px; font-size: 12px; opacity: 0.95; border-top: 1px solid #1e242c; background: rgba(255,255,255,0.02); }
+.priceGreen { color: #0ecb81; }
+.priceRed { color: #f6465d; }
+.bar { position: absolute; inset: 0; opacity: 0.14; pointer-events: none; transition: width 120ms ease; }
+.bar.green { background: #0ecb81; right: auto; }
+.bar.red { background: #f6465d; left: auto; }
+.tradeRow { display: grid; grid-template-columns: 100px 1fr 140px; padding: 6px 10px; font-variant-numeric: tabular-nums; }
+.tradeFlashUp { animation: flashUp 600ms ease; }
+.tradeFlashDown { animation: flashDown 600ms ease; }
+@keyframes flashUp { from { background: rgba(14,203,129,0.2); } to { background: transparent; } }
+@keyframes flashDown { from { background: rgba(246,70,93,0.2); } to { background: transparent; } }
+
+/* Top navigation */
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(11,14,17,0.9); border-bottom: 1px solid #1e242c; backdrop-filter: blur(8px) saturate(1.2); }
+.navInner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; gap: 8px; align-items: center; font-weight: 700; letter-spacing: 0.4px; color: #e6ecf3; }
+.brandDot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #0ecb81, #2ee59d); box-shadow: 0 0 0 2px rgba(46,229,157,0.12); }
+.muted { color: #9aa4b2; font-size: 12px; }
+
+/* Scrollbar */
+.cardBody::-webkit-scrollbar { width: 10px; }
+.cardBody::-webkit-scrollbar-track { background: transparent; }
+.cardBody::-webkit-scrollbar-thumb { background: #1c232b; border: 2px solid transparent; background-clip: padding-box; border-radius: 8px; }
+.cardBody::-webkit-scrollbar-thumb:hover { background: #232b35; border-color: transparent; }
+
+@media (max-width: 960px) {
+	.grid { grid-template-columns: 1fr; gap: 16px; }
+	.cardBody { height: 480px; }
+}
+
+
