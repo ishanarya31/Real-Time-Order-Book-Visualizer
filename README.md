@@ -49,5 +49,5 @@ Example combined endpoint:
 - Order book deltas: quantity `"0"` removes a price level.
 
 ## Deploy
-- One-click deploy on Vercel works out of the box.
+- Deployed on Vercel - https://realtimeorderbookvisualizer.vercel.app/
 
